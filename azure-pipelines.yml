@@ -25,11 +25,5 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
     
-- task: AzureWebApp@1
-  inputs:
-    appType: 'webApp'
-    azureSubscription: 'f708b252-01c9-4f27-8b33-88d9bba6e1ab'
-    appName: 'recharge-test-api'
-    package: $(System.DefaultWorkingDirectory)/**/*.zip  
     
 - task: PublishBuildArtifacts@1
