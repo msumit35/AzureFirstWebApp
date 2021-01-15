@@ -25,5 +25,11 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
     
-    
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (f708b252-01c9-4f27-8b33-88d9bba6e1ab)'
+    appType: 'webApp'
+    appName: 'recharge-test-api'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
 - task: PublishBuildArtifacts@1
